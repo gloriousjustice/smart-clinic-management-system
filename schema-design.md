@@ -1,4 +1,4 @@
-# Smart Clinic Management System Database Schema
+﻿# Smart Clinic Management System Database Schema
 
 ### 1. Patient Table
 * patient_id (INT, Primary Key, Auto Increment)
