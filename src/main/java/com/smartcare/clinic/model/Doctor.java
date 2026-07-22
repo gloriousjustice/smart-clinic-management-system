@@ -1,22 +1,24 @@
-package com.smartcare.clinic.model;
+﻿package com.smartcare.clinic.model;
 
 import jakarta.persistence.*;
+import java.util.List;
+import java.util.ArrayList;
 
 @Entity
-@Table(name = "doctor")
 public class Doctor {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long doctorId;
 
-    @Column(nullable = false)
     private String name;
-
-    @Column(nullable = false)
     private String specialization;
+    private String password;
 
-    private String availability;
+    @ElementCollection
+    @CollectionTable(name = 'doctor_availability', joinColumns = @JoinColumn(name = 'doctor_id'))
+    @Column(name = 'available_time')
+    private List<String> availableTimes = new ArrayList<>();
 
     // Default Constructor
     public Doctor() {}
@@ -31,6 +33,9 @@ public class Doctor {
     public String getSpecialization() { return specialization; }
     public void setSpecialization(String specialization) { this.specialization = specialization; }
 
-    public String getAvailability() { return availability; }
-    public void setAvailability(String availability) { this.availability = availability; }
+    public String getPassword() { return password; }
+    public void setPassword(String password) { this.password = password; }
+
+    public List<String> getAvailableTimes() { return availableTimes; }
+    public void setAvailableTimes(List<String> availableTimes) { this.availableTimes = availableTimes; }
 }
