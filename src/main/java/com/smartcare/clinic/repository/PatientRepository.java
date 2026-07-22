@@ -7,6 +7,10 @@ import java.util.Optional;
 
 @Repository
 public interface PatientRepository extends JpaRepository<Patient, Long> {
-    // This allows lookup for secure patient login operations
+
+    // Criterion 1: Retrieve a patient by email address
     Optional<Patient> findByEmail(String email);
+
+    // Criterion 2: Retrieve a patient using either an email address OR a phone number
+    Optional<Patient> findByEmailOrPhone(String email, String phone);
 }
