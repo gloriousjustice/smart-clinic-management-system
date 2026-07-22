@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Clinic - Patient Portal Workspace</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f9f9fb; margin: 0; padding: 20px; }
+        .box { background: white; padding: 25px; border-radius: 8px; max-width: 450px; margin: 30px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; text-align: center; margin-top: 0; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #9b59b6; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #8e44ad; }
+        .doc-card { border: 1px solid #ddd; padding: 12px; margin-top: 15px; border-radius: 5px; background: #fafafa; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION A: PATIENT PORTAL LOGIN SCREEN (Artifact #15) -->
+    <div id="loginSection" class="box">
+        <h2>Patient Portal Gateway</h2>
+        <input type="text" placeholder="Registered Email Address" id="patientEmail">
+        <input type="password" placeholder="Personal Password PIN" id="patientPass">
+        <button onclick="document.getElementById('loginSection').classList.add('hidden'); document.getElementById('dashboardSection').classList.remove('hidden');">Access Health Portal</button>
+    </div>
+
+    <!-- SECTION B: SEARCH AND FIND A DOCTOR BY NAME (Artifact #17) -->
+    <div id="dashboardSection" class="box hidden" style="max-width: 500px;">
+        <h2>Patient Medical Services Hub</h2>
+        <h3>Search for Registered Medical Staff</h3>
+        <input type="text" placeholder="Type doctor's name here (e.g., Dr. Smith)" id="searchBox">
+        <button onclick="document.getElementById('resultsSection').classList.remove('hidden');" style="background:#34495e;">Execute Database Search</button>
+        
+        <div id="resultsSection" class="hidden">
+            <h4 style="margin-bottom:5px; color:#2c3e50;">Matching Medical Practitioners Found:</h4>
+            <div class="doc-card">
+                <strong>Dr. Jonathan Smith, M.D.</strong><br>
+                <span style="color:#7f8c8d;">Specialization: General Cardiology Practitioner</span><br>
+                <span style="color:#27ae60; font-size:13px;">Accepting New Appointments (Mon-Wed)</span>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Clinic - Admin Portal Workspace</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f6f9; margin: 0; padding: 20px; }
+        .box { background: white; padding: 25px; border-radius: 8px; max-width: 400px; margin: 30px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; text-align: center; margin-top: 0; }
+        input, select, button { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #3498db; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #2980b9; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION A: ADMIN PORTAL LOGIN SCREEN (Artifact #13) -->
+    <div id="loginSection" class="box">
+        <h2>Admin Portal Gateway</h2>
+        <input type="text" placeholder="Admin Username ID" id="adminUser">
+        <input type="password" placeholder="Security Access Password" id="adminPass">
+        <button onclick="document.getElementById('loginSection').classList.add('hidden'); document.getElementById('dashboardSection').classList.remove('hidden');">Log In Security Access</button>
+    </div>
+
+    <!-- SECTION B: ADMIN PORTAL ADD DOCTOR TOOL (Artifact #16) -->
+    <div id="dashboardSection" class="box hidden" style="max-width: 500px;">
+        <h2>Admin Management Dashboard</h2>
+        <h3 style="color:#7f8c8d; border-bottom:1px solid #eee; padding-bottom:5px;">Add Doctor to Management System</h3>
+        <input type="text" placeholder="Doctor Full Name" id="docName">
+        <input type="text" placeholder="Medical Specialization Field" id="docSpec">
+        <input type="text" placeholder="Weekly Availability Schedule" id="docAvail">
+        <button onclick="alert('Doctor account added successfully into the Smart Clinic Directory!');">Register Doctor Account</button>
+    </div>
+
+</body>
+</html>

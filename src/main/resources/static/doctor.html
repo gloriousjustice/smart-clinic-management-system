@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Smart Clinic - Doctor Portal Workspace</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #eef2f7; margin: 0; padding: 20px; }
+        .box { background: white; padding: 25px; border-radius: 8px; max-width: 450px; margin: 30px auto; box-shadow: 0 4px 6px rgba(0,0,0,0.1); }
+        h2 { color: #2c3e50; text-align: center; margin-top: 0; }
+        input, button { width: 100%; padding: 10px; margin: 10px 0; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { background: #2ecc71; color: white; border: none; cursor: pointer; font-weight: bold; }
+        button:hover { background: #27ae60; }
+        table { width: 100%; border-collapse: collapse; margin-top: 15px; }
+        th, td { border: 1px solid #ddd; padding: 10px; text-align: left; font-size: 14px; }
+        th { background-color: #f2f2f2; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <!-- SECTION A: DOCTOR PORTAL LOGIN SCREEN (Artifact #14) -->
+    <div id="loginSection" class="box">
+        <h2>Doctor Portal Gateway</h2>
+        <input type="text" placeholder="Medical License Email" id="docEmail">
+        <input type="password" placeholder="Passcode Credentials" id="docPass">
+        <button onclick="document.getElementById('loginSection').classList.add('hidden'); document.getElementById('dashboardSection').classList.remove('hidden');">Authenticate Account</button>
+    </div>
+
+    <!-- SECTION B: VIEW PATIENT APPOINTMENTS LIST (Artifact #18) -->
+    <div id="dashboardSection" class="box hidden" style="max-width: 650px;">
+        <h2>Physician Patient Schedule Dashboard</h2>
+        <h3>Active Scheduled Patient Consultations</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Appt ID</th>
+                    <th>Patient Name</th>
+                    <th>Date Scheduled</th>
+                    <th>Consultation Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>101</td>
+                    <td>Alice Mitchell</td>
+                    <td>2026-07-25</td>
+                    <td style="color:#27ae60; font-weight:bold;">Confirmed</td>
+                </tr>
+                <tr>
+                    <td>104</td>
+                    <td>David Miller</td>
+                    <td>2026-07-26</td>
+                    <td style="color:#f39c12; font-weight:bold;">Pending Review</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>
